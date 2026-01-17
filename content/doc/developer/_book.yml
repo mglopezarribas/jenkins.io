@@ -1,0 +1,25 @@
+---
+chapters:
+  - architecture
+  - initialization
+  - extensibility
+  - model
+  - handling-requests
+  - security
+  - persistence
+  - scheduling
+  - views
+  - forms
+  - internationalization
+  - crowdin
+  - distributed-builds
+  - cli
+  - testing
+  - telemetry
+  - plugin-development
+  - plugin-governance
+  - publishing
+  - FIPS-140
+  - building
+  - development-environment
+  - tutorial-improve

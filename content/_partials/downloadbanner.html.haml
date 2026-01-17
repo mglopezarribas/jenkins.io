@@ -1,0 +1,32 @@
+.banner-container
+  .skew
+  .container
+    .row
+      &nbsp;
+    .row
+      .col-md-1.col-lg-2
+
+      .col-md-5.col-lg-4
+        %img{:src => "/images/logos/jenkins/jenkins.svg", :style => 'width: 256px;'}
+
+      .col-md-5.col-lg-4
+        %h1.page-title
+          %span>
+            Jenkins
+        %p
+          %strong
+            Build great things at any scale
+        %p
+          The leading open source automation server, Jenkins provides
+          hundreds of plugins to support building, deploying and automating
+          any project.
+
+        %div{:style => "display: flex; gap: 1rem"}
+          %a.app-button.app-button--primary{:href => expand_link('download')}
+            Download
+          %a.app-button{:href => expand_link('doc')}
+            Documentation
+
+      .col-md-1.col-lg-2
+    .row
+      &nbsp;

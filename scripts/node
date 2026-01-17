@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+if [ -n "${USE_LOCAL_NODE}" ]; then
+    if [ "$1" = "pull" ]; then
+        exit 0
+    fi
+
+    exec $@
+
+    exit
+fi
+
+
+CONTAINER_NAME=node:22.22.0
+
+source ./scripts/docker-env
+
+exec docker run --rm \
+    -u $(id -u):$(id -g) \
+    -e HOME="${PWD}" \
+    -v "${PWD}":"${PWD}"${DELEGATED} \
+    -w "${PWD}" \
+    "${CONTAINER_NAME}" $@

@@ -1,0 +1,12 @@
+---
+sections:
+  - docker
+  - kubernetes
+  - linux
+  - macos
+  - windows
+  - other
+  - war-file
+  - servlet-containers
+  - offline
+  - initial-settings

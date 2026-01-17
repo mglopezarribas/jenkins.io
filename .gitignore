@@ -1,0 +1,49 @@
+.DS_Store
+.gradle/
+build/
+*.sw*
+.awestruct/
+
+# Ignore merge files
+*.orig
+
+# Ignore Intellij files
+.idea
+*.iml
+
+# Ignore vscode files
+.vscode/
+
+# nodejs
+/node_modules/
+/.npm/
+
+# ruby
+/.bundle/
+/vendor/
+/.config/
+
+# external - see scripts/fetch-external-resources
+/content/_tmp/
+/content/_data/_generated/
+/content/_data/indexpage/thank_you.yml
+
+# external - files unzipped from /content/_tmp/
+# generated pipeline step documentation
+content/doc/pipeline/steps/*.adoc
+content/doc/pipeline/steps/params/*.adoc
+content/doc/pipeline/steps/allAscii/*.adoc
+content/doc/pipeline/steps/allAscii/params/*.adoc
+
+# generated extension points documentation
+content/doc/developer/extensions/*.adoc
+
+# ignore files from typo check
+typos.sarif
+typos
+
+# unknown
+/.sass-cache/
+/_site
+/_tmp/
+/content/_site/

@@ -1,0 +1,6 @@
+---
+name: "Avoris Travel"
+url: https://www.avoristravel.com/
+detailsUrl: https://stories.jenkins.io/user-story/to-do-things-quickly-simply-and-in-a-powerful-way/
+detailsLinkText: User Story
+---

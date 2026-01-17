@@ -1,0 +1,23 @@
+---
+layout: gsocprojectidea
+title: "EDA Coverage Adapters"
+goal: "Create Jenkins plugins for various Electronic Design Automation coverage reports"
+category: Plugins
+year: 2020
+status: published
+sig: hw-and-eda
+skills:
+- Java
+- EDA Tools
+- FPGA
+- ASIC
+- Coverage
+mentors:
+- "oleg_nenashev"
+- "shenyu_zheng"
+links:
+  gitter: "jenkinsci_hw-and-eda-sig:gitter.im"
+  draft: /projects/gsoc/2019/project-ideas/eda-coverage-adapters-draft.pdf
+---
+
+More details are available in the link:/projects/gsoc/2019/project-ideas/eda-coverage-adapters-draft.pdf[draft project idea].

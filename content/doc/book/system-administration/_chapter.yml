@@ -1,0 +1,14 @@
+---
+sections:
+  - backing-up
+  - monitoring
+  - administering-jenkins-on-kubernetes
+  - with-chef
+  - with-puppet
+  - viewing-logs
+  - authenticating-scripted-clients
+  - reverse-proxy-configuration-with-jenkins
+  - reverse-proxy-configuration-troubleshooting
+  - systemd-services
+  - FIPS-140
+  - admin-password-reset-instructions

@@ -1,0 +1,17 @@
+---
+sections:
+- build-process
+- distribution-process
+- choosing-jenkins-baseline
+- dependency-management
+- dependencies-and-class-loading
+- optional-dependencies
+- plugin-release-tips
+- incrementals
+guides:
+- updating-parent
+- mark-a-plugin-incompatible
+- writing-an-scm-plugin
+- pipeline-integration
+- split-plugin-from-core
+- usage-in-plugins

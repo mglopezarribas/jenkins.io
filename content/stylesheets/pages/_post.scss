@@ -1,0 +1,118 @@
+.app-post-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 100ch;
+  min-height: 65rem;
+  margin-top: 4rem;
+  color: var(--color);
+  margin-bottom: 4rem;
+
+  @media screen and (max-width: $app-mobile-breakpoint) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: $app-tablet-breakpoint) {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    font-size: 2.75rem;
+    font-weight: 800;
+    max-width: 80%;
+    margin-bottom: 0;
+
+    @media screen and (max-width: $app-mobile-breakpoint) {
+      max-width: unset;
+    }
+
+    @media screen and (max-width: $app-tablet-breakpoint) {
+      font-size: 2rem;
+    }
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+
+  .post-attrs {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 500;
+    gap: 1rem;
+    color: var(--color--secondary);
+    flex-wrap: wrap;
+  }
+
+  .submitted {
+    display: flex;
+    align-items: center;
+    gap: 0.5ch;
+    font-weight: 500;
+  }
+
+  .blog-content {
+    margin-bottom: -1.5rem;
+
+    h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    .paragraph, h2, h3, hr, table, pre, ul, ol, .imageblock, .listingblock {
+      margin: 0 0 1.5rem 0 !important;
+    }
+
+    .imageblock {
+      background-color: hsl(250, 10%, 95%);
+    }
+
+    .imageblock.right, .image.right {
+      float: right;
+    }
+
+    .imageblock.left, .image.left {
+      float: left;
+    }
+
+    .imageblock.center, .image.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .imageblock.boxshadow img {
+      margin: 5px 5px 5px 5px;
+      -moz-box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.5);
+      -webkit-box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.5);
+    }
+
+    .sectionbody, .sect1, .ulist, .sect2 {
+      display: contents;
+    }
+
+    .paragraph p, li, li p {
+      margin: 0 !important;
+      line-height: 1.66;
+      font-size: 1.15rem;
+    }
+  }
+
+  .share-buttons__container {
+    margin-left: auto;
+    height: 2rem;
+
+    span {
+      color: var(--color--secondary);
+    }
+
+    @media screen and (max-width: $app-mobile-breakpoint) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,108 @@
+---
+layout: simplepage
+title: Participate and Contribute
+section: participate
+noanchors: true
+opengraph:
+  image: /images/participate/participate-opengraph.png
+description: >
+  There are many ways to engage with the Jenkins project and community.
+  Here are the most common ways to get you started.
+  Welcome aboard!
+---
+
+:ruby
+  data = [
+    {
+      label: 'Connect',
+      description: 'Join our communication channels, discuss and help us spread the word!',
+      color: 'blue',
+      url: '/participate/connect'
+    },
+    {
+      label: 'Meet',
+      description: 'Meet other Jenkins users and share your experiences by organizing and attending events and meetups.',
+      color: 'green',
+      url: '/participate/meet'
+    },
+    {
+      label: 'Code',
+      description: 'Do you enjoy writing code? There are numerous plugins and components for you to contribute to.',
+      color: 'yellow',
+      url: '/participate/code'
+    },
+    {
+      label: 'Help',
+      description: 'As an experienced user, you can help others get the most out of Jenkins.',
+      color: 'orange',
+      url: '/participate/help'
+    },
+    {
+      label: 'Translate',
+      description: "If you're fluent in languages other than English, consider improving support for those languages.",
+      color: 'purple',
+      url: '/doc/developer/internationalization/'
+    },
+    {
+      label: 'Test',
+      description: 'You can help prevent regressions by contributing automated tests.',
+      color: 'pink',
+      url: '/participate/test'
+    },
+    {
+      label: 'Document',
+      description: 'Improve the documentation to make it easier for others to get started.',
+      color: 'cyan',
+      url: '/participate/document'
+    },
+    {
+      label: 'Design',
+      description: 'As it is intended for daily use by finicky web developers, design is essential.',
+      color: 'indigo',
+      url: '/participate/design'
+    },
+    {
+      label: 'Review',
+      description: 'Help review changes to code or documentation.',
+      color: 'brown',
+      url: '/participate/review-changes'
+    },
+    {
+      label: 'Donate',
+      description: 'If you have no time but want to help, we accept money to facilitate project goals.',
+      color: 'yellow',
+      url: '/donate/'
+    }
+  ]
+
+%p.app-description
+  There are many ways to engage with the Jenkins project and community. Here are the most common ways to get you
+  started. Welcome aboard!
+
+
+.app-info-cards.app-info-cards--four-column.app-info-cards--square
+  - data.each do |item|
+    %a.app-info-cards__item{ :href => item[:url], :style => '--card-background: var(--' + item[:color] + ');'}
+      %h3
+        = item[:label]
+      %p
+        = item[:description]
+      %span.app-info-cards__learn-more
+        Learn more
+        %ion-icon{:name => "arrow-forward-outline"}
+
+%p.app-description
+  %b
+    Help and feedback. 
+  Please contact us in the 
+  %a{:href => 'https://app.gitter.im/#/room/#jenkinsci_newcomer-contributors:gitter.im'}
+    Newcomer
+  or
+  %a{:href => 'https://app.gitter.im/#/room/#jenkinsci_advocacy-and-outreach-sig:gitter.im'}
+    Advocacy and Outreach SIG
+  channels if you have any questions about contributing to Jenkins.
+  See the
+  %a{:href => 'https://www.youtube.com/playlist?list=PLN7ajX_VdyaMsvHNW5JGlGdgJzqJ7Q5Mr'}
+    Contributing to Jenkins
+  YouTube play list for deep dives into specific areas.
+  Any feedback about the guidelines will be appreciated.

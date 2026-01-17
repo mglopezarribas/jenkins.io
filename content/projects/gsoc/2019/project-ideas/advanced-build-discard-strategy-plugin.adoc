@@ -1,0 +1,19 @@
+---
+layout: gsocprojectidea
+title: "Advanced Build Discard Strategy Plugin"
+goal: "Improve the existing Discard old builds feature with an Advanced Build Discarder Strategy plugin"
+category: Plugins
+year: 2019
+status: published
+sig: gsoc
+skills:
+- Java
+mentors:
+- "martinda"
+- "arnab1896"
+links:
+  gitter: jenkinsci_gsoc-build-discarder-project:gitter.im
+  draft: ../advanced-build-discard-strategy-plugin-draft.pdf
+---
+
+See link:../advanced-build-discard-strategy-plugin-draft.pdf[draft project idea].

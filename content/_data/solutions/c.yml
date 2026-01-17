@@ -1,0 +1,26 @@
+---
+usecase: "C/C++"
+color: '#00599C'
+dark: true;
+articles:
+plugins:
+-
+  - 'https://plugins.jenkins.io/warnings-ng'
+  - 'Warnings Next Generation plugin'
+  - 'collects compiler warnings and issues from static analysis tools such as CppCheck'
+-
+  - 'https://plugins.jenkins.io/valgrind'
+  - 'Valgrind plugin'
+  - 'run and incorporate Valgrind (memcheck) reports into Jenkins'
+-
+  - 'https://plugins.jenkins.io/cmakebuilder'
+  - 'CMake Builder plugin'
+  - 'provides a build step that generates the build scripts from a CMakeLists.txt file'
+-
+  - 'https://plugins.jenkins.io/xunit'
+  - 'xUnit plugin'
+  - 'generate reports based on test tooling output from various unit test frameworks'
+-
+  - 'https://plugins.jenkins.io/cppcheck'
+  - 'Cppcheck plugin'
+  - 'generate trend reports for CppCheck, a tool for static C/C++ code analysis.'

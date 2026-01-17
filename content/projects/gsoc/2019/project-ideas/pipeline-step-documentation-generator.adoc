@@ -1,0 +1,23 @@
+---
+layout: gsocprojectidea
+title: "Pipeline Step Documentation Generator improvements"
+goal: "Enhance the Jenkins Pipeline documentation generator to produce better documentation for thousands of Pipeline developers"
+category: Dev Tools
+year: 2019
+status: published
+sig: pipeline-authoring
+skills:
+- Java
+- Jenkins Pipeline
+- HTML
+- CSS
+- Asciidoc
+- JavaScript
+mentors:
+- "martinda"
+- "kwhetstone"
+links:
+  draft: /projects/gsoc/2019/project-ideas/pipeline-step-documentation-generator-draft.pdf
+---
+
+Details are in the link:/projects/gsoc/2019/project-ideas/pipeline-step-documentation-generator-draft.pdf[draft project idea].

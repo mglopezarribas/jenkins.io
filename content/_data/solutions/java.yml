@@ -1,0 +1,34 @@
+---
+usecase: "Java"
+color: '#0093A6'
+articles:
+  -
+    - 'https://www.jenkins.io/doc/tutorials/build-a-java-app-with-maven/'
+    - 'Build a Java App with Maven – Jenkins Official Tutorial'
+  -
+    - 'https://www.geeksforgeeks.org/how-to-build-java-application-in-jenkins/'
+    - 'How to Build Java Application in Jenkins – GeeksforGeeks'
+  -
+    - 'https://cookbook.gradle.org/ci/jenkins/'
+    - 'Jenkins - Gradle Cookbook'
+plugins:
+-
+  - 'https://plugins.jenkins.io/junit'
+  - 'JUnit plugin'
+  - 'publishes JUnit XML formatted test reports for trending and analysis'
+-
+  - 'https://plugins.jenkins.io/gradle'
+  - 'Gradle plugin'
+  - 'support invoking Gradle as a build step and listing executing tasks per build'
+-
+  - 'https://plugins.jenkins.io/warnings-ng'
+  - 'Warnings Next Generation plugin'
+  - 'collects compiler warnings and issues from static analysis tools such as SpotBugs and PMD'
+-
+  - 'https://plugins.jenkins.io/sonar'
+  - 'SonarQube plugin'
+  - 'integrate reporting from the SonarQube code quality/inspection platform'
+-
+  - 'https://plugins.jenkins.io/repository-connector'
+  - 'Repository Connector plugin'
+  - 'adds features for resolving artifacts from a Maven repository such as Nexus or Artifactory.'

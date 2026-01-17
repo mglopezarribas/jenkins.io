@@ -1,0 +1,21 @@
+---
+layout: gsocprojectidea
+title: "Improvements to the Jenkins Acceptance Test Harness"
+goal: "Improve performance of the framework for WebUI and Integration testing"
+category: Dev Tools
+year: 2019
+status: published
+skills:
+- Java
+- Docker
+- Selenium
+mentors:
+- "martinda"
+- "olivergondza"
+- "mramonleon"
+links:
+  draft: ../ath-improvements-draft.pdf
+  gitter: jenkinsci_acceptance-test-harness:gitter.im
+---
+
+More details are available in the link:../ath-improvements-draft.pdf[draft project idea].

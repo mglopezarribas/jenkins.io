@@ -1,0 +1,134 @@
+!!!
+
+%html{:lang => 'en'}
+  %head
+    - if not page.description.nil?
+      - description = page.description
+    - else
+      - if not page.overview.nil?
+        - description = page.overview
+      - else
+        - description = "Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software"
+    - if page.opengraph.nil?
+      - opengraph_image = "images/logo-title-opengraph.png"
+    - else 
+      - opengraph_image = page.opengraph[:image]
+    - unless opengraph_image.start_with? "{{"
+      - opengraph_image = expand_link(opengraph_image)
+
+    %title
+      = page.title
+    %meta{:'http-equiv' => 'Content-Type', :content => 'text/html; charset=UTF-8'}/
+    %meta{:'name' => 'description', :content => description}/
+
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %meta{:content => "ie=edge", "http-equiv" => "x-ua-compatible"}/
+    %link{:rel => "canonical", :href => absolute_link(page.output_path)}/
+
+    / Favicons
+    %link{:rel => "shortcut icon", :href => "/favicon.ico", :type => "image/x-icon"}/
+    %link{:rel => "apple-touch-icon", :sizes => "180x180", :href => "/apple-touch-icon.png"}
+    %link{:rel => "icon", :type => "image/png", :sizes => "32x32", :href => "/favicon-32x32.png"}
+    %link{:rel => "icon", :type => "image/png", :sizes => "16x16", :href => "/favicon-16x16.png"}
+    %link{:rel => "manifest", :href => "/site.webmanifest"}
+    %link{:rel => "mask-icon", :href => "/safari-pinned-tab.svg", :color => "#5bbad5"}
+    %meta{:name => "msapplication-TileColor", :content => "#2b5797"}
+    %meta{:name => "theme-color", :content => "#ffffff"}
+
+    %meta{:content => page.title, :name => "apple-mobile-web-app-title"}/
+    / Twitter Card data
+    %meta{:content => "summary_large_image", :name => "twitter:card"}/
+    %meta{:content => "@JenkinsCI", :name => "twitter:site"}/
+    %meta{:content => page.title, :name => "twitter:title"}/
+    %meta{:content => description, :name => "twitter:description"}/
+    %meta{:content => "@JenkinsCI", :name => "twitter:creator"}/
+
+    / Twitter Summary card images must be at least 120x120px
+    %meta{:content => opengraph_image, :name => "twitter:image"}/
+    / Open Graph data
+    %meta{:content => page.title, :property => "og:title"}/
+    %meta{:content => "article", :property => "og:type"}/
+    %meta{:content => absolute_link(page.output_path), :property => "og:url"}/
+    %meta{:content => description, :property => "og:description"}/
+    %meta{:content => page.title, :property => "og:site_name"}/
+    %meta{:content => opengraph_image, :property => "og:image"}/
+
+    - if page.css
+      - for style in page.css
+        %link{:href => expand_link("#{style}"), :rel => 'stylesheet', :media => 'screen'}/
+    - else
+      %link{:href => expand_link("/assets/bower/bootstrap/css/bootstrap.min.css"),
+        :rel => 'stylesheet',
+        :media => 'screen'}/
+      %link{:href => expand_link("/css/jenkins.css"),
+        :rel => 'stylesheet',
+        :media => 'screen'}/
+      %link{:href => expand_link("/css/copy-to-clipboard.css"),
+        :rel => 'stylesheet',
+        :media => 'screen'}/
+      %link{:href => expand_link("/stylesheets/styles.css"),
+        :rel => 'stylesheet',
+        :media => 'screen'}/
+
+    / Non-obtrusive CSS styles
+    %link{:href => expand_link("/css/footer.css"),
+      :rel => 'stylesheet',
+      :media => 'screen'}/
+    - if not page.barebone
+      %link{:href => expand_link("/css/font-awesome.min.css"),
+        :rel => 'stylesheet',
+        :media => 'screen'}/
+      %link{:href => "https://cdn.jsdelivr.net/npm/@docsearch/css@3",
+        :rel => 'stylesheet'}/
+
+  %body
+    %script{:src => expand_link("/assets/bower/jquery/jquery.min.js")}
+    %script{:src => expand_link("/js/copy-to-clipboard.js")}
+    
+    = content
+
+    %script{:src => expand_link("/assets/bower/anchor-js/anchor.min.js")}
+    %script{:src => expand_link("/assets/bower/@popperjs/core/umd/popper.min.js")}
+    %script{:src => expand_link("/assets/bower/bootstrap/js/bootstrap.min.js")}
+    %script{:src => "https://cdn.jsdelivr.net/npm/lit@3.2.1/polyfill-support.js"}
+    %script{:src => "https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.8.0/webcomponents-loader.js"}
+
+    %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.4.0/ionicons/ionicons.esm.js",
+      :type => "module",
+      :defer => "",
+      :data-stencil-namespace => "ionicons"}
+    %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.4.0/ionicons/ionicons.js",
+      :nomodule => "",
+      :defer => "",
+      :data-stencil-namespace => "ionicons"}
+
+    %script{:src => "https://cdn.jsdelivr.net/npm/@jenkinsci/jenkins-io-components/+esm",
+      :type => "module",
+      :defer => ""}
+    %script{:src => "https://cdn.jsdelivr.net/npm/@jenkinsci/jenkins-io-components/",
+      :nomodule => "",
+      :defer => ""}
+
+    %jio-footer{:property => "https://www.jenkins.io",
+      :githubRepo => "jenkins-infra/jenkins.io",
+      :githubBranch => "master",
+      :reportAProblemTemplate => "4-bug.yml",
+      :sourcePath=> page.uneditable ? "" : "content#{page.relative_source_path}"}
+
+    -# Add Twitter widget.
+    -# Hide outline for dropdowns when clicked, but show it when focused
+    -# by pressing Tab.
+    :javascript
+      $(function(){
+        var $body = $(document.body);
+        $body.on("keydown", function(){
+          $body.removeClass("no-outline");
+        })
+        const updateTheme = () => {
+            const dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.dataset.theme = dark ? "dark" : "";
+        }
+        updateTheme();
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateTheme);
+      })

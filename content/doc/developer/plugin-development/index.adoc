@@ -1,0 +1,10 @@
+---
+title: Plugin Development
+summary: About Jenkins' internal extension functionality, modules, and plugins
+layout: developerchapter
+references:
+- url: https://github.com/jenkinsci/plugin-pom
+  title: Plugin parent POM on GitHub
+- url: https://github.com/jenkinsci/gradle-jpi-plugin
+  title: Gradle JPI Plugin
+---

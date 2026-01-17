@@ -1,0 +1,72 @@
+---
+layout: default
+---
+
+:ruby
+  articles = []
+  unless page.noblogs
+    articles = site.posts.map do |post|
+      # if we have tags provided to the partial (page.tags) then we
+      # should only show the post if its tags contain one of those passed
+      # into the partial. page.tags is a TagStat
+      next if page.tags && (!post.tags || !(page.tags & post.tags.map(&:to_s)).any?)
+      post
+    end
+    # Remove all our nils and then trim to ten posts
+    articles = articles.compact.slice(0, 10)
+  end
+
+= partial('anchors.html.haml', :selector => '.container .row .col-lg-9');
+
+.container
+  .row.body.flex-lg-nowrap
+    .col-lg-9
+      %h1
+        = page.title
+      = content
+
+      = partial('discuss.html.haml', :links => page.links)
+
+    #projects-sidebar-menu.col-lg-3
+      - if page.title.strip == "Advocacy and Outreach" || page.title.strip == "Documentation" || page.title.strip == "Google Summer of Code" || page.title.strip == "Platform" || page.title.strip == "User Experience"
+        .sidebar-nav
+          %h4
+            On this page
+
+          = document.converter.convert document, 'outline'
+
+          = partial("connect-h4-div.html.haml", :links => page.links, :sig => page.sig, :project => page.project)
+
+          %div
+            - # Only render articles if we have them
+            - if articles.size > 0
+              %div{:id => 'block-block-15', :class => 'block block-block even blog-posts'}
+                %h4.title
+                  Recent Blog Posts
+
+                %ul
+                  - articles.each do |article|
+                    %li
+                      %a{:href => article.url}
+                        = article.title
+      - else
+        #sidebar-content.sidebar-nav.tour
+          %h4
+            On this page
+
+          = document.converter.convert document, 'outline'
+
+          = partial("connect-h4-div.html.haml", :links => page.links, :sig => page.sig, :project => page.project)
+
+          %div
+            - # Only render articles if we have them
+            - if articles.size > 0
+              %div{:id => 'block-block-15', :class => 'block block-block even blog-posts'}
+                %h4.title
+                  Recent Blog Posts
+
+                %ul
+                  - articles.each do |article|
+                    %li
+                      %a{:href => article.url}
+                        = article.title

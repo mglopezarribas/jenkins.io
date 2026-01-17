@@ -1,0 +1,18 @@
+:ruby
+  articles = site.posts.map do |post|
+    # if we have tags provided to the partial (page.tags) then we
+    # should only show the post if its tags contain one of those passed
+    # into the partial. page.tags is a TagStat
+    next if page.tags && (!post.tags || !(page.tags & post.tags.map(&:to_s)).any?)
+    post
+  end
+  # Remove all our nils and then trim to nine posts
+  articles = articles.compact.slice(0, 9)
+
+
+- # Only render articles if we have them
+- if articles.size > 0
+  %h2.app-events__heading
+    Recent posts
+
+  = partial('blogcardlist.html.haml', :posts => articles)

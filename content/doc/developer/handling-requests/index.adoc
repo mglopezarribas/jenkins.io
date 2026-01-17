@@ -1,0 +1,9 @@
+---
+title: Handling Requests
+summary: Explains how Jenkins routes HTTP requests, and what ways to respond exist.
+layout: developerchapter
+references:
+- title: Stapler Reference Documentation
+  url: https://github.com/stapler/stapler/blob/master/README.md
+wip: true
+---

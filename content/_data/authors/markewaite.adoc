@@ -1,0 +1,10 @@
+---
+name: "Mark Waite"
+twitter: MarkEWaite
+github: markewaite
+irc: markewaite
+linkedin: markwaite
+---
+
+Mark is a Jenkins user and contributor, a core maintainer, and maintainer of the plugin:git[git plugin], the plugin:git-client[git client plugin], and several others.
+He is one of the authors of the link:/doc/developer/tutorial-improve/["Improve a plugin"] tutorial.

@@ -1,0 +1,2 @@
+Mailing list for jenkins.io operations and link:/projects/infrastructure/[Jenkins Infrastructure].
+

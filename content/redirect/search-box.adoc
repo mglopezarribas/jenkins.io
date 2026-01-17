@@ -1,0 +1,6 @@
+---
+layout: redirect
+redirect_url: "/doc/book/using/searchbox/"
+localized_urls:
+  ja: https://wiki.jenkins.io/display/JA/Search+Box
+---

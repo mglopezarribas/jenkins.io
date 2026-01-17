@@ -1,0 +1,55 @@
+---
+layout: documentation
+uneditable: true
+notitle: true
+---
+
+%p
+  The following plugin provides functionality available through
+  Pipeline-compatible steps. Read more about how to integrate steps into your
+  Pipeline in the
+  %a{:href => expand_link("doc/book/pipeline/syntax/#declarative-steps")} Steps
+  section of the
+  %a{:href => expand_link("doc/book/pipeline/syntax")} Pipeline Syntax
+  page.
+
+%p
+  For a list of other such plugins, see the
+  %a{:href => expand_link("doc/pipeline/steps/")} Pipeline Steps Reference
+  page.
+
+= content
+
+%hr/
+
+.container
+= partial ('_feedback-footer.html')
+
+:javascript
+  $(function() {
+    var collapsibleList = function(e){
+      for (var i=1; i < e.length; i++) {
+        var li = e[i];
+        if (li.tagName == "LI" && li.children[0]) {
+          var r=li.children[0].innerText;
+
+          var plus = $(`<button class="app-button app-button--accordion"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M256 112v288M400 256H112"/></svg></button>`);
+          var minus = $(`<button class="app-button app-button--accordion"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M400 256H112"/></svg></button>`);
+          $(li.children[0]).prepend(minus);
+
+          var expander = $("<li/>").append($("<code/>").text(r)).prepend(plus);
+          var toggle = (function() {
+            this.next().toggleClass("collapse");
+            this.toggleClass("collapse")
+          }).bind(plus.parent());
+          plus.on("click", toggle);
+          minus.on("click", toggle);
+          expander.insertBefore($(li));
+          $(li).addClass("collapse");
+        }
+      }
+    };
+    $("ul>b:contains('Nested')").each(function(e,f){
+      collapsibleList($(f).parent().children())
+    });
+  });
